@@ -8,12 +8,12 @@ build:
   script:
     - pip install -r pip-req.txt
 
-proc.ipaddr:
+proc.ipaddr-r:
   cmd: python service.py
   port: 10000
 
-portal.portal-ipaddr:
-  service_name: ipaddr
+portal.portal-ipaddr-r:
+  service_name: ipaddr-r
   allow_clients: "**"
   cmd: python proxy.py
   port: 10000
