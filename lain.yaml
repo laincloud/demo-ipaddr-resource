@@ -4,11 +4,12 @@ apptype: resource
 build:
   base: laincloud/centos-lain:20160503
   prepare:
-    - pip install -r pip-req.txt
+    version: 0
+    script:
+      - pip install -r pip-req.txt
   script:
     - pip install -r pip-req.txt
-
-proc.ipaddr-r:
+web:
   cmd: python service.py
   port: 10000
 
@@ -17,7 +18,6 @@ portal.portal-ipaddr-r:
   allow_clients: "**"
   cmd: python proxy.py
   port: 10000
-  
+
 notify:
   slack: "#lain"
-
